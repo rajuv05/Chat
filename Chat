@@ -1,0 +1,281 @@
+# Chat
+
+Perfect 👍
+You’ve uploaded your **FSJP (Full Stack Java Programming)** practical exam questions for **Semester III (2025–26)**.
+Let’s prepare you **completely** — both theory + code + explanation for all 8 programs.
+
+---
+
+### 🧾 FSJP Practical Exam Programs — Complete Preparation Guide
+
+---
+
+#### **1️⃣ Classes and Objects with Looping and Branching in Java**
+
+**Concepts:** Class, Object, Looping (for/while), Branching (if/else/switch)
+
+**Example: Find the sum of even numbers using a class**
+
+```java
+class EvenSum {
+    int limit;
+
+    EvenSum(int limit) {
+        this.limit = limit;
+    }
+
+    void calculateSum() {
+        int sum = 0;
+        for(int i = 1; i <= limit; i++) {
+            if(i % 2 == 0)
+                sum += i;
+        }
+        System.out.println("Sum of even numbers till " + limit + " = " + sum);
+    }
+
+    public static void main(String[] args) {
+        EvenSum obj = new EvenSum(10);
+        obj.calculateSum();
+    }
+}
+```
+
+🧠 *Concepts used:* class, object, constructor, for loop, if condition.
+
+---
+
+#### **2️⃣ Method Overloading in Java**
+
+**Concepts:** Compile-time polymorphism.
+
+```java
+class Addition {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    public static void main(String[] args) {
+        Addition obj = new Addition();
+        System.out.println(obj.add(10, 20));
+        System.out.println(obj.add(10.5, 20.5));
+        System.out.println(obj.add(1, 2, 3));
+    }
+}
+```
+
+🧠 *Concepts used:* same method name, different parameters.
+
+---
+
+#### **3️⃣ Constructor Overloading in Java**
+
+**Concepts:** Multiple constructors with different parameter lists.
+
+```java
+class Student {
+    String name;
+    int age;
+
+    Student() {
+        name = "Unknown";
+        age = 0;
+    }
+
+    Student(String n) {
+        name = n;
+        age = 18;
+    }
+
+    Student(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        Student s2 = new Student("Ravi");
+        Student s3 = new Student("Priya", 21);
+        s1.display();
+        s2.display();
+        s3.display();
+    }
+}
+```
+
+---
+
+#### **4️⃣ Various Types of Inheritance in Java**
+
+**Concepts:** Single, Multilevel, Hierarchical
+
+```java
+class Animal {
+    void eat() { System.out.println("Eating..."); }
+}
+
+class Dog extends Animal {
+    void bark() { System.out.println("Barking..."); }
+}
+
+class Puppy extends Dog {
+    void weep() { System.out.println("Weeping..."); }
+}
+
+public class InheritanceDemo {
+    public static void main(String[] args) {
+        Puppy p = new Puppy();
+        p.eat();
+        p.bark();
+        p.weep();
+    }
+}
+```
+
+🧠 *Concepts:* Multilevel inheritance (Animal → Dog → Puppy)
+
+---
+
+#### **5️⃣ Exception Handling in Java**
+
+**Concepts:** try, catch, finally, throw
+
+```java
+class ExceptionDemo {
+    public static void main(String[] args) {
+        try {
+            int a = 10, b = 0;
+            int c = a / b;  // Error
+            System.out.println("Result: " + c);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Division by zero not allowed!");
+        } finally {
+            System.out.println("End of program.");
+        }
+    }
+}
+```
+
+---
+
+#### **6️⃣ JavaScript Animation (HTML + JS)**
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Animation</title>
+<style>
+#box {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  position: relative;
+}
+</style>
+</head>
+<body>
+
+<div id="box"></div>
+
+<script>
+let pos = 0;
+let box = document.getElementById("box");
+
+function move() {
+  if (pos >= 300) pos = 0;
+  pos += 2;
+  box.style.left = pos + "px";
+  requestAnimationFrame(move);
+}
+move();
+</script>
+</body>
+</html>
+```
+
+---
+
+#### **7️⃣ JavaScript DOM Manipulation**
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+<h2 id="heading">Hello, Welcome!</h2>
+<button onclick="changeText()">Click Me</button>
+
+<script>
+function changeText() {
+  document.getElementById("heading").innerHTML = "You clicked the button!";
+}
+</script>
+</body>
+</html>
+```
+
+🧠 *Concept:* DOM (Document Object Model) = structure of HTML accessible using JavaScript.
+
+---
+
+#### **8️⃣ JSP Implicit and Explicit Objects**
+
+📌 **dispDate.jsp**
+
+```jsp
+<%@ page language="java" %>
+<html>
+<body>
+<h2>Today's Date:</h2>
+<%= new java.util.Date() %>
+</body>
+</html>
+```
+
+📌 **greetings.jsp**
+
+```jsp
+<%@ page language="java" %>
+<html>
+<body>
+<%
+    String name = request.getParameter("name");
+    if (name == null) name = "Guest";
+%>
+<h2>Welcome, <%= name %>!</h2>
+</body>
+</html>
+```
+
+📌 **userinfo1.jsp**
+
+```jsp
+<%@ page language="java" %>
+<html>
+<body>
+<%
+    String user = "Raju";
+    session.setAttribute("user", user);
+%>
+<p>User stored in session: <%= session.getAttribute("user") %></p>
+</body>
+</html>
+```
+
+🧠 *Concepts:* JSP implicit objects → `request`, `response`, `session`, `out`, `application`.
+
+---
+
+Would you like me to make this entire set into a **formatted PDF (with explanations + output screenshots section)** for your lab submission?
+I can generate that next.
